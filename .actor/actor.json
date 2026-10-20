@@ -1,0 +1,16 @@
+{
+  "actorSpecification": 1,
+  "name": "b2b-website-contact-and-pixel-lead-enricher",
+  "title": "B2B Website Contact, Socials & Ad-Pixel Lead Enricher",
+  "description": "Extract business emails, phone numbers, WhatsApp links, social profiles, installed Ad Pixels (Meta, TikTok, Google Ads, GTM), and e-commerce tech stack (Shopify, WooCommerce) from any list of domains.",
+  "version": "0.1",
+  "buildTag": "latest",
+  "input": "./input_schema.json",
+  "output": "./output_schema.json",
+  "readme": "./README.md",
+  "dockerfile": "../Dockerfile",
+  "storages": {
+    "dataset": "./dataset_schema.json",
+    "keyValueStore": "./key_value_store_schema.json"
+  }
+}

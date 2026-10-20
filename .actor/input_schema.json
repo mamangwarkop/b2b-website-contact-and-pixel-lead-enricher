@@ -1,0 +1,24 @@
+{
+  "title": "B2B Website Contact, Socials & Ad-Pixel Lead Enricher",
+  "description": "Enrich company domains with verified emails, phone numbers, WhatsApp links, social media URLs, installed advertising pixels (Meta, TikTok, Google Ads), and tech stack.",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "urls": {
+      "title": "Domains or Website URLs",
+      "type": "array",
+      "description": "Enter company domains (e.g. gymshark.com, colourpop.com) or full website URLs.",
+      "editor": "stringList",
+      "default": ["gymshark.com", "colourpop.com"],
+      "prefill": ["gymshark.com", "colourpop.com"]
+    },
+    "checkContactPages": {
+      "title": "Crawl /contact and /about pages automatically",
+      "type": "boolean",
+      "description": "If enabled, checks /contact or /about pages linked from the homepage to find additional emails and phone numbers.",
+      "editor": "checkbox",
+      "default": true
+    }
+  },
+  "required": ["urls"]
+}
