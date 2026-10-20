@@ -1,0 +1,17 @@
+{
+  "actorOutputSchemaVersion": 1,
+  "title": "Website Contact & Ad-Pixel Lead Enricher Output",
+  "description": "Enriched B2B website leads with emails, socials, WhatsApp, ad pixels, and tech stack.",
+  "properties": {
+    "results": {
+      "type": "string",
+      "title": "Enriched Leads (Overview Table)",
+      "template": "{{links.apiDefaultDatasetUrl}}/items?view=overview"
+    },
+    "summary": {
+      "type": "string",
+      "title": "Run Summary (JSON)",
+      "template": "{{links.apiDefaultKeyValueStoreUrl}}/records/SUMMARY"
+    }
+  }
+}

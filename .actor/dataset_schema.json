@@ -1,0 +1,61 @@
+{
+  "actorSpecification": 1,
+  "fields": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+      "domain": { "type": ["string", "null"], "description": "Normalized company domain" },
+      "title": { "type": ["string", "null"], "description": "Website page title" },
+      "primaryEmail": { "type": ["string", "null"], "description": "Primary business email" },
+      "emails": { "type": "array", "description": "All extracted business emails" },
+      "phones": { "type": "array", "description": "Extracted phone numbers" },
+      "whatsappLinks": { "type": "array", "description": "Extracted WhatsApp chat links" },
+      "linkedin": { "type": ["string", "null"], "description": "LinkedIn URL" },
+      "instagram": { "type": ["string", "null"], "description": "Instagram URL" },
+      "tiktok": { "type": ["string", "null"], "description": "TikTok URL" },
+      "facebook": { "type": ["string", "null"], "description": "Facebook URL" },
+      "hasMetaPixel": { "type": ["boolean", "null"], "description": "Whether Meta/Facebook Pixel is installed" },
+      "hasTikTokPixel": { "type": ["boolean", "null"], "description": "Whether TikTok Pixel is installed" },
+      "hasGoogleAdsTag": { "type": ["boolean", "null"], "description": "Whether Google Ads Tag is installed" },
+      "pixelsDetected": { "type": "array", "description": "All detected ad and analytics tags" },
+      "missingAdPixels": { "type": "array", "description": "Core ad pixels NOT installed (agency pitch signal)" },
+      "techStack": { "type": "array", "description": "Detected CMS, e-commerce, and CRM platforms" }
+    }
+  },
+  "views": {
+    "overview": {
+      "title": "Overview",
+      "transformation": {
+        "fields": [
+          "domain",
+          "primaryEmail",
+          "phones",
+          "whatsappLinks",
+          "instagram",
+          "linkedin",
+          "hasMetaPixel",
+          "hasTikTokPixel",
+          "hasGoogleAdsTag",
+          "missingAdPixels",
+          "techStack"
+        ]
+      },
+      "display": {
+        "component": "table",
+        "properties": {
+          "domain": { "label": "Domain" },
+          "primaryEmail": { "label": "Primary Email" },
+          "phones": { "label": "Phones" },
+          "whatsappLinks": { "label": "WhatsApp" },
+          "instagram": { "label": "Instagram", "format": "link" },
+          "linkedin": { "label": "LinkedIn", "format": "link" },
+          "hasMetaPixel": { "label": "Meta Pixel", "format": "boolean" },
+          "hasTikTokPixel": { "label": "TikTok Pixel", "format": "boolean" },
+          "hasGoogleAdsTag": { "label": "Google Ads", "format": "boolean" },
+          "missingAdPixels": { "label": "Missing Pixels (Pitch)" },
+          "techStack": { "label": "Tech Stack" }
+        }
+      }
+    }
+  }
+}
